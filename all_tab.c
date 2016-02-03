@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/30 17:02:19 by avella            #+#    #+#             */
-/*   Updated: 2016/02/03 16:08:05 by avella           ###   ########.fr       */
+/*   Updated: 2016/02/03 17:44:42 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ char	**create_tab(char *argv, char **tab)
 	{
 		line = ft_strjoins(line, yt);
 		line = ft_strjoins(line, " \n ");
+	}
+	if (ret == -1)
+	{
+		ft_putstr("Bad file descriptor\n");
+		exit(1);
 	}
 	tab = ft_strsplit(line, ' ');
 	return (tab);
