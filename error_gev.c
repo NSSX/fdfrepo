@@ -26,7 +26,7 @@ int		error(int argc)
 {
 	if (argc != 2)
 	{
-		printf("Bug arg");
+		printf("Give just one arg\n");
 		return (0);
 	}
 	return (1);
