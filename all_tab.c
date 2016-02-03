@@ -23,7 +23,7 @@ char	**create_tab(char *argv, char **tab)
 	ret = 0;
 	fd = open(argv, O_RDONLY);
 	line = (char *)malloc(sizeof(char) * 2);
-	while ((ret = get_next_line(fd, &yt)))
+	while ((ret = get_next_line(fd, &yt)) && ret != -1)
 	{
 		line = ft_strjoins(line, yt);
 		line = ft_strjoins(line, " \n ");
