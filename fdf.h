@@ -15,16 +15,12 @@
 # include <mlx.h>
 # include <stdio.h>
 # include "libft/includes/libft.h"
-# define RECTX 10
-# define RECTY 10
 # include <stdio.h>
 # include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
+# include <unistd.h>
 # include <fcntl.h>
 # include "fdf.h"
 # include <math.h>
-# define RGB(r, g, b)(256 * 256 * (int)(r) + 256 * (int)(g) + (int)(b))
 # define WIDTH 1500
 # define HEIGTH 1500
 # include "get_next_line.h"
