@@ -14,7 +14,6 @@
 
 int		main(int argc, char **argv)
 {
-	char		*line;
 	int			i;
 	t_struct	*mystruct;
 	char		***coord;
@@ -23,12 +22,12 @@ int		main(int argc, char **argv)
 	i = 0;
 	if (error(argc) == 0)
 		return (0);
-	mystruct = give(mystruct);
+	mystruct = give();
 	legend(mystruct->mlx, mystruct->win);
-	tab = create_tab(argv[1], tab);
+	tab = create_tab(argv[1]);
 	while (tab[i])
 		i++;
-	coord = create_coord_tab(tab, coord, i);
+	coord = create_coord_tab(tab, i);
 	mystruct = give2(mystruct, i, tab, coord);
 	mystruct->img = give_img(mystruct->mlx);
 	mystruct->event = give_myevent();

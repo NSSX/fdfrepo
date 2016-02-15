@@ -6,18 +6,19 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/30 17:02:19 by avella            #+#    #+#             */
-/*   Updated: 2016/02/03 17:44:42 by avella           ###   ########.fr       */
+/*   Updated: 2016/02/15 14:12:56 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-char	**create_tab(char *argv, char **tab)
+char	**create_tab(char *argv)
 {
 	char	*line;
 	char	*yt;
 	int		fd;
 	int		ret;
+	char **tab;
 
 	fd = 0;
 	ret = 0;
@@ -28,7 +29,7 @@ char	**create_tab(char *argv, char **tab)
 		line = ft_strjoins(line, yt);
 		line = ft_strjoins(line, " \n ");
 	}
-	if (ret == -1)
+	if (ret == -1 || line[0] == '\0')
 	{
 		ft_putstr("Bad file descriptor\n");
 		exit(1);
@@ -37,9 +38,10 @@ char	**create_tab(char *argv, char **tab)
 	return (tab);
 }
 
-char	***create_coord_tab(char **tab, char ***coord, int i)
+char	***create_coord_tab(char **tab, int i)
 {
 	int index;
+	char ***coord;
 
 	index = 0;
 	coord = (char ***)malloc(sizeof(char **) * i + 1);

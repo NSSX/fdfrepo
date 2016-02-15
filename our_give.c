@@ -12,8 +12,10 @@
 
 #include "fdf.h"
 
-t_struct	*give(t_struct *mystruct)
+t_struct	*give(void)
 {
+  t_struct *mystruct;
+
 	mystruct = (t_struct *)malloc(sizeof(t_struct) * 20);
 	mystruct->mlx = mlx_init();
 	mystruct->win = mlx_new_window(mystruct->mlx, WIDTH, HEIGTH, "42");

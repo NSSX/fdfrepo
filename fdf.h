@@ -13,13 +13,11 @@
 #ifndef FDF_H
 # define FDF_H
 # include <mlx.h>
-# include <stdio.h>
-# include "libft/includes/libft.h"
+# include "libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "fdf.h"
 # include <math.h>
 # define WIDTH 1500
 # define HEIGTH 1500
@@ -104,12 +102,12 @@ void									img_other_view(int keycode,
 										t_struct *param);
 void									img_other(int keycode, t_struct *param);
 int										event_mlx(int keycode, t_struct *param);
-char									**create_tab(char *argv, char **tab);
+char									**create_tab(char *argv);
 char									***create_coord_tab(char **tab,
-										char ***coord, int i);
+										int i);
 t_coor									*give_coor(t_coor *coor,
 										t_struct *param);
-t_coor									*start_coor(t_coor *coor, int x, int y);
+t_coor									*start_coor(int x, int y);
 t_coor									*else_coor(t_coor *coor,
 										t_struct *param, int index);
 char									***set_coordq(t_struct *param,
@@ -129,7 +127,7 @@ void									draw_with_tab_on_img(char ***coord,
 										int i, int maxline, t_struct *param);
 void									my_pixel_put_to_image(t_img *myimg,
 										int x, int y, int color);
-t_struct								*give(t_struct *mystruct);
+t_struct								*give(void);
 int										give_maxline(char **tab);
 t_struct								*give2(t_struct *mystruct,
 										int i, char **tab, char ***coord);
@@ -138,8 +136,7 @@ void									legend(void *mlx, void *win);
 int										couleur(double t);
 t_coor									*give_coorx(t_coor *coor,
 										t_struct *param);
-t_coor									*start_coorx(t_coor *coor,
-										int x, int y);
+t_coor									*start_coorx(int x, int y);
 t_coor									*else_coorx(t_coor *coor,
 										t_struct *param, int index);
 char									***set_coordx(t_struct *param,
@@ -148,8 +145,7 @@ char									***set_coordp(t_struct *param,
 										float x, float y, int index);
 t_coor									*else_coorp(t_coor *coor,
 										t_struct *param, int index);
-t_coor									*start_coorp(t_coor *coor,
-										int x, int y);
+t_coor									*start_coorp(int x, int y);
 t_coor									*give_coorp(t_coor *coor,
 										t_struct *param);
 t_line									*give_line(float xi,

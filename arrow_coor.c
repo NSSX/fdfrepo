@@ -22,8 +22,10 @@ t_coor	*give_coorp(t_coor *coor, t_struct *param)
 	return (coor);
 }
 
-t_coor	*start_coorp(t_coor *coor, int x, int y)
+t_coor	*start_coorp(int x, int y)
 {
+  t_coor *coor;
+
 	coor = (t_coor *)malloc(sizeof(t_coor) * 12);
 	coor->v = 0;
 	coor->j = 0;
@@ -51,7 +53,7 @@ char	***set_coordp(t_struct *param, float x, float y, int index)
 {
 	t_coor *coor;
 
-	coor = start_coorp(coor, x, y);
+	coor = start_coorp(x, y);
 	while (index < param->i)
 	{
 		if (param->coord[index][2][0] == '\n')

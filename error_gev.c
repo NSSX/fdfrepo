@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/30 17:04:19 by avella            #+#    #+#             */
-/*   Updated: 2016/02/03 16:12:51 by avella           ###   ########.fr       */
+/*   Updated: 2016/02/15 13:59:39 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		error(int argc)
 {
 	if (argc != 2)
 	{
-		printf("Give just one arg\n");
+		ft_putstr("Give just one arg\n");
 		return (0);
 	}
 	return (1);
